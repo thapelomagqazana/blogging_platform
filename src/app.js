@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/authRoutes');
+const profileRoutes = require('./routes/profileRoutes');
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 });
 app.use('/api', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api', profileRoutes);
 
 // Start server
 app.listen(PORT, () => {
