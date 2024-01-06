@@ -6,6 +6,8 @@ const authRoutes = require('./routes/authRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const blogPostRoutes = require('./routes/blogPostRoutes');
 const homeRoutes = require('./routes/homeRoutes');
+const blogPostInteractionRoutes = require('./routes/blogPostInteractionRoutes');
+
 const cors = require('cors');
 
 dotenv.config();
@@ -29,6 +31,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api', profileRoutes);
 app.use('/api', blogPostRoutes);
 app.use('/api', homeRoutes); // Add this line for the homepage route
+app.use('/api', blogPostInteractionRoutes);
 
 // Start server
 app.listen(PORT, () => {
