@@ -3,6 +3,7 @@ const blogPostController = require('../controllers/blogPostController');
 
 const router = express.Router();
 
-router.get('/featured-posts', blogPostController.getFeaturedPosts);
+router.post('/blog-posts', blogPostController.createBlogPost);
+router.get('/blog-posts', blogPostController.getAllBlogPosts);
 
 module.exports = router;

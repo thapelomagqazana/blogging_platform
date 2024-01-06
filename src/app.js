@@ -6,11 +6,15 @@ const authRoutes = require('./routes/authRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const blogPostRoutes = require('./routes/blogPostRoutes');
 const homeRoutes = require('./routes/homeRoutes');
+const cors = require('cors');
 
 dotenv.config();
 
 const app = express()
 const PORT = process.env.PORT || 3000;
+
+// Use cors middleware
+app.use(cors());
 
 //Middleware
 app.use(express.json());
