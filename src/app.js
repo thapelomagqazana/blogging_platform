@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
     res.send('Hello, World!');
 });
 app.use('/api', userRoutes);
+app.use('/api/auth', authRoutes);
 
 // Start server
 app.listen(PORT, () => {
