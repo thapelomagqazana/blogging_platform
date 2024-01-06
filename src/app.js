@@ -4,6 +4,8 @@ const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/authRoutes');
 const profileRoutes = require('./routes/profileRoutes');
+const blogPostRoutes = require('./routes/blogPostRoutes');
+const homeRoutes = require('./routes/homeRoutes');
 
 dotenv.config();
 
@@ -21,6 +23,8 @@ app.get('/', (req, res) => {
 app.use('/api', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api', profileRoutes);
+app.use('/api', blogPostRoutes);
+app.use('/api', homeRoutes); // Add this line for the homepage route
 
 // Start server
 app.listen(PORT, () => {
