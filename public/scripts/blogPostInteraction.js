@@ -1,38 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     const blogPostsList = document.getElementById('blogPostsList');
-    const blogPostForm = document.getElementById('blogPostForm');
+    // const blogPostForm = document.getElementById('blogPostForm');
     
     // Event listener for form submission
-    blogPostForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
+    // blogPostForm.addEventListener('submit', async (event) => {
+    //     event.preventDefault();
     
-        const formData = new FormData(blogPostForm);
-        const title = formData.get('title');
-        const content = formData.get('content');
-        const authorId = formData.get('authorId');
+    //     const formData = new FormData(blogPostForm);
+    //     const title = formData.get('title');
+    //     const content = formData.get('content');
+    //     const authorId = formData.get('authorId');
     
-        // Create a new blog post
-        try {
-          const response = await fetch('http://localhost:5000/api/blog-posts', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ title, content, authorId }),
-          });
+    //     // Create a new blog post
+    //     try {
+    //       const response = await fetch('http://localhost:5000/api/blog-posts', {
+    //         method: 'POST',
+    //         headers: {
+    //           'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({ title, content, authorId }),
+    //       });
     
-          if (response.ok) {
-            console.log('Blog post created successfully.');
-            blogPostForm.reset();
-            await fetchBlogPosts();
-          } else {
-            const data = await response.json();
-            console.error(data.error || 'Failed to create blog post.');
-          }
-        } catch (error) {
-          console.error('Error creating blog post:', error);
-        }
-      });
+    //       if (response.ok) {
+    //         console.log('Blog post created successfully.');
+    //         blogPostForm.reset();
+    //         await fetchBlogPosts();
+    //       } else {
+    //         const data = await response.json();
+    //         console.error(data.error || 'Failed to create blog post.');
+    //       }
+    //     } catch (error) {
+    //       console.error('Error creating blog post:', error);
+    //     }
+    //   });
   
     // Event listener for like button click
     blogPostsList.addEventListener('click', async (event) => {
